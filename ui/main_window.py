@@ -71,12 +71,7 @@ class MainWindow(QMainWindow):
             itinerary = get_itinerary(destination, styles, days)
         except Exception as e:
             print(f"Error getting itinerary: {e}")
-            # Fallback to hardcoded data
-            itinerary = {
-                "Day 1": ["Arrive at " + destination, "Explore local market"],
-                "Day 2": ["Visit adventure park", "Try local food"],
-                "Day 3": ["Relax at beach", "Evening city tour"]
-            }
+
         
         self.results_tree.clear()
         for day, items in itinerary.items():
